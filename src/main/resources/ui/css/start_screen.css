@@ -1,0 +1,65 @@
+/* ─── Layout panels ───────────────────────────────────────────────────────── */
+
+.bottom-bar {
+    -fx-padding: 14 20 14 20;
+    -fx-background-color: #B0DBF7;
+    -fx-border-color: #439EE0;
+    -fx-border-width: 1 0 0 0;
+}
+
+.runway-panel {
+    -fx-background-color: #E8F2FC;
+    -fx-padding: 16;
+    -fx-border-color: transparent #B0DBF7 transparent transparent;
+    -fx-border-width: 0 2 0 0;
+}
+
+.settings-panel {
+    -fx-background-color: white;
+    -fx-padding: 20;
+    -fx-border-color: transparent transparent transparent #B0DBF7;
+    -fx-border-width: 0 0 0 2;
+}
+
+/* ─── Collapsible settings sections ──────────────────────────────────────── */
+
+.settings-section {
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    -fx-border-color: #B0DBF7;
+    -fx-border-width: 1;
+}
+
+.settings-section > .title {
+    -fx-background-color: #B0DBF7;
+    -fx-background-radius: 8 8 0 0;
+    -fx-padding: 8 12 8 12;
+}
+
+.settings-section > .title > .text {
+    -fx-fill: #2770a4;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+.settings-section > .title > .arrow-button > .arrow {
+    -fx-background-color: #2770a4;
+}
+
+.settings-section > .content {
+    -fx-background-color: white;
+    -fx-padding: 12;
+    -fx-border-color: #B0DBF7;
+    -fx-border-width: 0 1 1 1;
+    -fx-border-radius: 0 0 8 8;
+}
+
+.errorBox {
+    -fx-background-color: rgba(238, 31, 31, 0.458);
+    -fx-padding: 5 60 5 60;
+    -fx-background-radius: 10;
+}
+
+.errorMsg {
+    -fx-text-fill: rgb(118, 76, 76);
+}

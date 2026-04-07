@@ -1,0 +1,99 @@
+/* ─── Card container ──────────────────────────────────────────────────────── */
+
+.runway-card {
+    -fx-background-color: white;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #B0DBF7;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(39, 112, 164, 0.28), 12, 0.0, 0, 3);
+}
+
+.runway-card:hover {
+    -fx-background-color: #F4F9FE;
+    -fx-border-color: #88C1EB;
+    -fx-effect: dropshadow(gaussian, rgba(39, 112, 164, 0.42), 16, 0.0, 0, 5);
+}
+
+/* ─── Card header ─────────────────────────────────────────────────────────── */
+
+.runway-card__header {
+    -fx-padding: 12 12 10 12;
+    -fx-background-color: transparent;
+}
+
+.runway-card__index-chip {
+    -fx-background-color: #B0DBF7;
+    -fx-background-radius: 50;
+    -fx-text-fill: #2770a4;
+    -fx-font-weight: bold;
+    -fx-font-size: 11px;
+    -fx-padding: 3 8 3 8;
+    -fx-min-width: 28;
+    -fx-alignment: CENTER;
+}
+
+.runway-card__title {
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-text-fill: #2770a4;
+}
+
+.runway-card__subtitle {
+    -fx-font-size: 11px;
+    -fx-text-fill: #5a7fa0;
+}
+
+.runway-card__delete-btn {
+    -fx-background-color: transparent;
+    -fx-border-color: #B0DBF7;
+    -fx-border-radius: 50;
+    -fx-background-radius: 50;
+    -fx-font-size: 11px;
+    -fx-text-fill: #2770a4;
+    -fx-padding: 4 7 4 7;
+    -fx-cursor: hand;
+    -fx-min-width: 28;
+    -fx-min-height: 28;
+}
+
+.runway-card__delete-btn:hover {
+    -fx-background-color: #E8F2FC;
+    -fx-border-color: #439EE0;
+    -fx-text-fill: #c0392b;
+}
+
+.runway-card__delete-btn:pressed {
+    -fx-background-color: #B0DBF7;
+}
+
+/* ─── Card body ───────────────────────────────────────────────────────────── */
+
+.runway-card__divider {
+    -fx-background-color: #B0DBF7;
+    -fx-padding: 0;
+}
+
+.runway-card__body {
+    -fx-padding: 10 12 14 12;
+}
+
+/* ─── Choice boxes inside card ────────────────────────────────────────────── */
+
+.runway-card__choice {
+    -fx-background-color: white;
+    -fx-border-color: #88C1EB;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-border-width: 1;
+    -fx-font-size: 12px;
+}
+
+.runway-card__choice:focused {
+    -fx-border-color: #439EE0;
+}
+
+.runway-card__choice .list-cell {
+    -fx-font-size: 12px;
+    -fx-text-fill: #333;
+}

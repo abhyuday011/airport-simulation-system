@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane
+    fx:id="root"
+    prefWidth="800"
+    prefHeight="450"
+    styleClass="sim-root"
+    stylesheets="@/ui/css/common.css, @/ui/css/simulation_screen.css, @/ui/css/settings_modal.css"
+    xmlns="http://javafx.com/javafx/25"
+    xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="uk.ac.warwick.cs261.ui.controllers.modals.SettingsModalController">
+
+    <!-- HEADER -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="12" styleClass="top-bar">
+            <Label text="Settings" styleClass="top-bar__title" />
+        </HBox>
+    </top>
+
+    <!-- BODY -->
+    <center>
+        <VBox spacing="24" styleClass="settings-modal__body">
+            <padding><Insets top="24" right="28" bottom="24" left="28" /></padding>
+
+            <!-- Simulation Speed -->
+            <VBox spacing="10">
+                <Label text="Simulation Speed" styleClass="section-header" />
+                <HBox alignment="CENTER_LEFT" spacing="12">
+                <Label text="Slow" styleClass="field-label" />
+                <Slider fx:id="speedSlider"
+                        HBox.hgrow="ALWAYS"
+                        min="0.0" max="4.0" value="1.0"
+                        majorTickUnit="0.05"
+                        minorTickCount="0"
+                        snapToTicks="true"
+                        showTickMarks="false"
+                        showTickLabels="false"
+                        styleClass="settings-modal__slider" />
+                <Label text="Fast" styleClass="field-label" />
+                <Label fx:id="speedValueLabel" text="1.0×"
+                    styleClass="sim-time-value"
+                    style="-fx-min-width: 42; -fx-alignment: CENTER; -fx-background-color: #439EE0;" />
+            </HBox>
+            </VBox>
+
+            <Separator styleClass="settings-modal__sep" />
+
+            <!-- Fast Mode -->
+            <VBox spacing="6">
+                <Label text="Fast Mode" styleClass="section-header" />
+                <HBox alignment="CENTER_LEFT" spacing="16">
+                    <Label text="Skips rendering delays and runs the simulation as fast as possible."
+                            styleClass="field-label"
+                            wrapText="true" />
+                    <Button fx:id="fastModeBtn"
+                            mnemonicParsing="false"
+                            styleClass="btn, btn--secondary"
+                            text="Enable Fast Mode" 
+                            onAction="#onSwitchToFastMode"/>
+                </HBox>
+            </VBox>
+
+            <Separator styleClass="settings-modal__sep" />
+
+            <!-- Quit -->
+            <VBox spacing="6">
+                <Label text="Quit Simulation" styleClass="section-header"
+                       style="-fx-text-fill: #c0392b;" />
+                <HBox alignment="CENTER_LEFT" spacing="16">
+                    <Label text="Return to the start screen. Your current simulation will be lost."
+                           styleClass="field-label" HBox.hgrow="ALWAYS" wrapText="true" />
+                    <Button mnemonicParsing="false"
+                            styleClass="settings-modal__quit-btn"
+                            text="Quit" 
+                            onAction="#onQuitSimulation"/>
+                </HBox>
+            </VBox>
+
+        </VBox>
+    </center>
+
+</BorderPane>

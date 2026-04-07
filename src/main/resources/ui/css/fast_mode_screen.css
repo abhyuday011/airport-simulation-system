@@ -1,0 +1,63 @@
+/* ─── Loading screen ──────────────────────────────────────────────────────── */
+
+.loading-label {
+    -fx-text-fill: #2770a4;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+}
+
+/* ─── Spinner ─────────────────────────────────────────────────────────────── */
+
+.loading-spinner {
+    -fx-accent: #439EE0;
+}
+
+.loading-spinner .percentage {
+    -fx-fill: transparent;
+}
+
+/* ─── Footer ──────────────────────────────────────────────────────────────── */
+
+.loading-footer {
+    -fx-background-color: #B0DBF7;
+    -fx-border-color: #439EE0;
+    -fx-border-width: 1 0 0 0;
+}
+
+/* ─── Quit button, transparent base to sit on blue bar ──────────────────── */
+
+.loading-quit-btn {
+    -fx-background-color: transparent;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: #e74c3c;
+    -fx-border-width: 1;
+    -fx-text-fill: #c0392b;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+    -fx-padding: 7 20 7 20;
+    -fx-effect: none;
+}
+
+.loading-quit-btn:hover {
+    -fx-background-color: rgba(192,57,43,0.12);
+    -fx-border-color: #c0392b;
+}
+
+.loading-quit-btn:pressed {
+    -fx-background-color: rgba(192,57,43,0.22);
+    -fx-translate-x: 1;
+    -fx-translate-y: 1;
+}
+
+/* ─── View statistics button, disabled state ─────────────────────────────── */
+
+.loading-stats-btn:disabled {
+    -fx-background-color: #c8d8e8;
+    -fx-border-color: #a0b8cc;
+    -fx-text-fill: #8aa0b0;
+    -fx-opacity: 1;
+    -fx-effect: none;
+    -fx-cursor: default;
+}

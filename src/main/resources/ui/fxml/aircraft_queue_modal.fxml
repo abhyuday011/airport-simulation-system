@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import uk.ac.warwick.cs261.ui.components.AircraftTableView?>
+
+<BorderPane
+    fx:id="root"
+    prefWidth="800"
+    prefHeight="450"
+    styleClass="sim-root"
+    stylesheets="@/ui/css/common.css, @/ui/css/simulation_screen.css"
+    xmlns="http://javafx.com/javafx/25"
+    xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="uk.ac.warwick.cs261.ui.controllers.modals.AircraftQueueModalController">
+
+    <!-- HEADER -->
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="12" styleClass="top-bar">
+            <Label fx:id="title" text="Aircraft Queue" styleClass="top-bar__title" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Label fx:id="queueSizeLabel" text="0 aircraft" styleClass="sim-time-value" />
+        </HBox>
+    </top>
+
+    <!-- BODY -->
+    <center>
+        <VBox spacing="0" styleClass="flight-queue-panel">
+            <AircraftTableView fx:id="flightTable" VBox.vgrow="ALWAYS" />
+        </VBox>
+    </center>
+
+</BorderPane>

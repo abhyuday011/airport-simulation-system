@@ -1,0 +1,126 @@
+.top-bar {
+    -fx-background-color: #439EE0;
+    -fx-padding: 10 20 10 20;
+    -fx-border-color: transparent transparent #2770a4 transparent;
+    -fx-border-width: 0 0 2 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 8, 0.0, 0, 2);
+}
+
+.app-title {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 18px;
+}
+
+.tab-pane .tab {
+    -fx-background-color: rgb(255, 255, 255);
+    -fx-translate-x:18;
+    -fx-translate-y:2;
+    -fx-pref-width: 95px;
+    -fx-background-radius: 5 5 0 0;
+}
+
+.tab-pane .tab:hover {
+    -fx-background-color: rgba(228, 232, 240, 0.763);
+    -fx-translate-y:1;
+
+}
+
+.tab-pane .tab:selected {
+    -fx-background-color: rgba(252, 253, 255, 0.763);
+    -fx-translate-y:5;
+}
+
+.tab-pane .tab-header-background {
+    -fx-background-color: #ffffff00;
+}
+
+.tabWrapper {
+    -fx-padding: 0 20 20 20;
+    -fx-background-color: transparent;
+}
+
+.tabContent {
+    -fx-background-color: rgba(255, 255, 255, 0.95);
+    -fx-background-radius: 5 20 20 20;
+    -fx-effect: dropshadow(gaussian, rgba(120, 172, 255, 0.592), 25, 0.0, 0, 8);
+}
+
+.statBox {
+    -fx-background-color: rgba(229, 241, 245, 0.95);
+    -fx-background-radius: 12;
+    -fx-background-radius: 8;
+    -fx-pref-width: 300;
+    -fx-font-size: 14;
+    -fx-effect: innershadow( gaussian, rgba(129, 139, 168, 0.5), 10, 0, 5, 5 );
+    -fx-effect: innershadow( gaussian, rgba(129, 139, 168, 0.258), 3, 0, 5, 5 );
+
+}
+
+.statBox.Runway {
+    -fx-font-size: 18;
+}
+
+.statBoxRight {
+    -fx-background-color: rgba(229, 241, 245, 0.95);
+    -fx-background-radius: 12;
+    -fx-background-radius: 8;
+    -fx-pref-width: 300;
+    -fx-padding: 0 12 12 0;
+    -fx-effect: innershadow( gaussian, rgba(129, 139, 168, 0.5), 10, 0, 5, 5 );
+    -fx-effect: innershadow( gaussian, rgba(129, 139, 168, 0.258), 3, 0, 5, 5 );
+
+}
+.leftRight{
+    -fx-padding: 20;
+}
+
+.sides {
+    -fx-padding: 10 0 0 0;
+}
+
+.title {
+    -fx-font-size: 30;
+}
+
+.mainValue {
+    -fx-font-size: 20;
+    -fx-font-color: rgba(8, 31, 101, 1);
+    /* -fx-spacing: 12; */
+
+}
+
+.separator:vertical .line {
+    -fx-background-color: white;
+    -fx-border-color: transparent;
+    -fx-background-insets: 0;
+    -fx-padding: 0;
+    -fx-pref-width: 2px;
+}
+
+
+.toggle {
+    -fx-background-color: #88C1EB;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: #439EE0;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgb(208, 221, 238), 2, 0.0, 3, 5);
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+    -fx-padding: 7 18 7 18;
+    -fx-font-size: 13px;
+}
+
+.toggle:hover {
+    -fx-background-color: #6ec3ff;
+    -fx-border-color: #439EE0;
+}
+
+.toggle:pressed {
+    -fx-background-color: #56aae5;
+    -fx-border-color: #439EE0;
+    -fx-effect: dropshadow(gaussian, rgb(208, 221, 238), 2, 0.0, 3, 5);
+    -fx-translate-x: 1;
+    -fx-translate-y: 1;
+}

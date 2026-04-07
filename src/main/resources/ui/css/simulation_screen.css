@@ -1,0 +1,424 @@
+/* ─── Root ────────────────────────────────────────────────────────────────── */
+
+.sim-root {
+    -fx-background-color: #E8F2FC;
+}
+
+/* ─── Time display (top bar) ──────────────────────────────────────────────── */
+
+.sim-time-label {
+    -fx-text-fill: rgba(255, 255, 255, 0.8);
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-font-family: "Courier New";
+}
+
+.sim-time-value {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-font-family: "Courier New", monospace;
+    -fx-background-color: rgba(0,0,0,0.12);
+    -fx-background-radius: 4;
+    -fx-padding: 2 8 2 8;
+}
+
+/* ─── Main simulation area ────────────────────────────────────────────────── */
+
+.sim-main-area {
+    -fx-background-color: #fbfdff;
+    -fx-padding: 12;
+}
+
+.sim-runway-area {
+    -fx-background-color: #fbfdff;
+    -fx-padding: 4 8 4 8;
+}
+
+/* ─── Queue boxes ─────────────────────────────────────────────────────────── */
+
+.queue-box {
+    -fx-effect: dropshadow(gaussian, #aab8c7, 8, 0.0, 0, 1);
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-color: #B0DBF7;
+    -fx-border-width: 2;
+    -fx-border-radius: 8;
+    -fx-cursor: hand;
+}
+
+.queue-box:hover {
+    -fx-border-color: #439EE0;
+    -fx-effect: dropshadow(gaussian, rgba(67,158,224,0.40), 12, 0.0, 0, 3);
+}
+
+.queue-box__header {
+    -fx-background-color: #ddeef9;
+    -fx-background-radius: 6 6 0 0;
+    -fx-border-color: transparent transparent #B0DBF7 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 6 8 6 8;
+    -fx-spacing: 3;
+}
+
+.queue-box__label {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2770a4;
+    -fx-alignment: CENTER;
+    -fx-text-alignment: CENTER;
+}
+
+/* ─── Runway boxes ────────────────────────────────────────────────────────── */
+
+.runway-box {
+    -fx-effect: dropshadow(gaussian, #aab8c7, 8, 0.0, 0, 1);
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-color: #B0DBF7;
+    -fx-border-width: 3;
+    -fx-border-radius: 6;
+    -fx-pref-width: 60;
+    -fx-pref-height: 170;
+}
+
+.runway-box-list {
+    -fx-spacing: 7;
+    -fx-padding: 12;
+}
+
+/* ─── Bottom panels ───────────────────────────────────────────────────────── */
+
+.sim-bottom-panels {
+    -fx-border-color: #439EE0 transparent transparent transparent;
+    -fx-border-width: 2 0 0 0;
+}
+
+.sim-events-panel {
+    -fx-background-color: #f9fbfe;
+    -fx-border-color: transparent #B0DBF7 transparent transparent;
+    -fx-border-width: 0 1 0 0;
+}
+
+.sim-stats-panel {
+    -fx-background-color: white;
+}
+
+/* ─── Event log ───────────────────────────────────────────────────────────── */
+
+.msg-root {
+    -fx-padding: 3 0 3 0;
+    -fx-border-color: transparent transparent #eef3f8 transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.msg-time {
+    -fx-text-fill: #888;
+    -fx-font-family: monospace;
+    -fx-font-size: 12px;
+    -fx-min-width: 52;
+}
+
+.msg-source {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-padding: 1 5 1 5;
+    -fx-background-radius: 3;
+    -fx-text-fill: #555;
+    -fx-background-color: #e8f0f8;
+}
+
+.msg-message {
+    -fx-text-fill: #333;
+    -fx-font-size: 12px;
+}
+
+/* LOW severity, neutral */
+.msg-message--low {
+    -fx-text-fill: #333;
+}
+
+/* MEDIUM severity, amber */
+.msg-message--medium {
+    -fx-text-fill: #b07800;
+}
+
+.msg-source--medium {
+    -fx-text-fill: #b07800;
+    -fx-background-color: #fff3cd;
+}
+
+/* HIGH severity, red */
+.msg-message--high {
+    -fx-text-fill: #c0392b;
+    -fx-font-weight: bold;
+}
+
+.msg-source--high {
+    -fx-text-fill: #c0392b;
+    -fx-background-color: #fdecea;
+}
+
+/* ─── Live statistics ─────────────────────────────────────────────────────── */
+
+.stat-label {
+    -fx-font-size: 12px;
+}
+
+.stat-value {
+    -fx-text-fill: #2770a4;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+/* ─── Flight queue panel ──────────────────────────────────────────────────── */
+
+.flight-queue-panel {
+    -fx-background-color: white;
+    -fx-border-color: #B0DBF7;
+    -fx-border-width: 0 0 0 2;
+}
+
+.flight-queue-panel__header {
+    -fx-background-color: #439EE0;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 8 12 8 12;
+}
+
+/* ─── Runway grid (alternative layout, kept for reference) ───────────────── */
+
+.runway-col-header {
+    -fx-text-fill: #2770a4;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-alignment: CENTER;
+    -fx-background-color: #ddeef9;
+    -fx-border-color: #B0DBF7;
+    -fx-border-width: 0 1 1 0;
+    -fx-padding: 4;
+    -fx-text-alignment: CENTER;
+}
+
+.runway-col-header--emergency {
+    -fx-background-color: #fdecea;
+    -fx-text-fill: #c0392b;
+}
+
+.runway-col-header--fail {
+    -fx-background-color: #fff3cd;
+    -fx-text-fill: #856404;
+}
+
+.runway-col-header--warn {
+    -fx-background-color: #fff8e1;
+    -fx-text-fill: #b07800;
+}
+
+.runway-row {
+    -fx-background-color: #f9fbfe;
+    -fx-border-color: #ddeef9;
+    -fx-border-width: 1;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-padding: 6;
+}
+
+.runway-queue-col {
+    -fx-background-color: #e8f2fc;
+    -fx-background-radius: 4;
+    -fx-border-color: #B0DBF7;
+    -fx-border-radius: 4;
+    -fx-border-width: 1;
+    -fx-padding: 4;
+    -fx-min-height: 60;
+}
+
+.runway-queue-col--emergency {
+    -fx-background-color: #fdecea;
+    -fx-border-color: #e74c3c;
+}
+
+.runway-queue-col--fail {
+    -fx-background-color: #fff3cd;
+    -fx-border-color: #f0ad4e;
+}
+
+.runway-queue-col--warn {
+    -fx-background-color: #fff8e1;
+    -fx-border-color: #ffc107;
+}
+
+.runway-strip-container {
+    -fx-padding: 0 12 0 12;
+}
+
+.runway-strip {
+    -fx-background-color: #2770a4;
+    -fx-background-radius: 3;
+}
+
+.runway-arrow {
+    -fx-text-fill: #2770a4;
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+}
+
+.runway-name-label {
+    -fx-text-fill: #2770a4;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-padding: 0 4 0 4;
+}
+
+.aircraft-icon {
+    -fx-font-size: 20px;
+    -fx-text-fill: #2770a4;
+    -fx-rotate: 45;
+}
+
+.aircraft-icon--emergency {
+    -fx-text-fill: #e74c3c;
+}
+
+/* ─── Timetable ───────────────────────────────────────────────────────────── */
+
+.timetable-header-row {
+    -fx-background-color: #B0DBF7;
+    -fx-background-radius: 4 4 0 0;
+}
+
+.timetable-col-header {
+    -fx-text-fill: #2770a4;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+    -fx-padding: 4 6 4 6;
+}
+
+.timetable-row {
+    -fx-border-color: transparent transparent #ddeef9 transparent;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 3 0 3 0;
+}
+
+.timetable-callsign {
+    -fx-text-fill: #333;
+    -fx-font-size: 12px;
+    -fx-font-family: monospace;
+    -fx-padding: 2 6 2 6;
+}
+
+.timetable-time--on-time {
+    -fx-text-fill: white;
+    -fx-background-color: #5cb85c;
+    -fx-background-radius: 3;
+    -fx-padding: 2 6 2 6;
+    -fx-font-size: 12px;
+    -fx-font-family: monospace;
+    -fx-font-weight: bold;
+}
+
+.timetable-time--late {
+    -fx-text-fill: white;
+    -fx-background-color: #d9534f;
+    -fx-background-radius: 3;
+    -fx-padding: 2 6 2 6;
+    -fx-font-size: 12px;
+    -fx-font-family: monospace;
+    -fx-font-weight: bold;
+}
+
+/* Pause and unpause button */
+
+
+.pause {
+    -fx-background-color: #439EE0;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(255,255,255,0.70);
+    -fx-border-width: 1;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+    -fx-padding: 5 16 5 16;
+    -fx-font-size: 13px;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.15), 2, 2, 2, 2);
+}
+
+.pause:hover {
+    -fx-background-color: #439ee095;
+    -fx-border-color: white;
+}
+
+.pause:pressed {
+    -fx-background-color: rgba(255,255,255,0.28);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.0.21), 3, 10, 1, 3);
+    -fx-translate-x: 1;
+    -fx-translate-y: 6;
+}
+
+.unpause {
+    -fx-background-color: rgba(255, 255, 255, 0.865);
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: #1064a0 ;
+    -fx-font-color: black;
+    -fx-border-width: 1;
+    -fx-text-fill: #1064a0;
+    -fx-cursor: hand;
+    -fx-padding: 5 16 5 16;
+    -fx-font-size: 13px;
+    -fx-translate-x: 1;
+    -fx-translate-y: 3;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.21), 0.75, 8, 0.5, 1);
+}
+
+.unpause:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.8);
+    -fx-border-color: #439EE0;
+}
+
+.unpause:pressed {
+    -fx-background-color: rgba(255, 255, 255, 0.472);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.0.21), 2, 9, 1, 3);
+    -fx-translate-x: 1;
+    -fx-translate-y: 5;
+}
+/* ─── RunwayView (styled as queue-box) ───────────────────────────────────── */
+
+/* Body area inside the runway card */
+.runway-view__body {
+    -fx-padding: 8 6 8 6;
+    -fx-alignment: TOP_CENTER;
+}
+
+.runway-view__mode {
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2770a4;
+    -fx-alignment: CENTER;
+    -fx-text-alignment: CENTER;
+}
+
+.runway-view__status {
+    -fx-font-size: 11px;
+    -fx-text-fill: #5a7fa0;
+    -fx-alignment: CENTER;
+    -fx-text-alignment: CENTER;
+}
+
+.queue-box--no-hover:hover {
+    -fx-border-color: #B0DBF7;
+    -fx-effect: dropshadow(gaussian, #aab8c7, 8, 0.0, 0, 1);
+    -fx-cursor: default;
+}
+
+.runway-view__status--warn {
+    -fx-text-fill: #b07800;
+    -fx-font-weight: bold;
+}
+
+.runway-view__status--error {
+    -fx-text-fill: #c0392b;
+    -fx-font-weight: bold;
+}

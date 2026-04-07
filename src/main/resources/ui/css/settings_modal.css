@@ -1,0 +1,85 @@
+/* ─── Settings modal ──────────────────────────────────────────────────────── */
+
+.settings-modal__body {
+    -fx-background-color: white;
+}
+
+.settings-modal__sep {
+    -fx-background-color: #B0DBF7;
+    -fx-padding: 0;
+}
+
+/* ─── Speed slider ────────────────────────────────────────────────────────── */
+
+.settings-modal__slider .track {
+    -fx-background-color: #B0DBF7;
+    -fx-pref-height: 5;
+}
+
+.settings-modal__slider .thumb {
+    -fx-background-color: #2770a4;
+    -fx-pref-width: 12;
+    -fx-pref-height: 12;
+    -fx-effect: dropshadow(gaussian, rgba(39,112,164,0.35), 6, 0.0, 0, 1);
+}
+
+.settings-modal__slider .thumb:hover {
+    -fx-background-color: #1e5f91;
+}
+
+.settings-modal__slider .thumb:pressed {
+    -fx-background-color: #174d78;
+    -fx-effect: dropshadow(gaussian, rgba(39,112,164,0.55), 8, 0.0, 0, 2);
+}
+
+/* ─── Quit button ─────────────────────────────────────────────────────────── */
+
+.settings-modal__quit-btn {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: #e74c3c;
+    -fx-border-width: 1;
+    -fx-text-fill: #c0392b;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+    -fx-padding: 7 20 7 20;
+    -fx-effect: dropshadow(gaussian, rgba(192,57,43,0.15), 6, 0.0, 0, 1);
+}
+
+.settings-modal__quit-btn:hover {
+    -fx-background-color: #fdecea;
+    -fx-border-color: #c0392b;
+    -fx-effect: dropshadow(gaussian, rgba(192,57,43,0.28), 10, 0.0, 0, 2);
+}
+
+.settings-modal__quit-btn:pressed {
+    -fx-background-color: #f9d0cc;
+    -fx-effect: dropshadow(gaussian, rgba(192,57,43,0.12), 4, 0.0, 0, 1);
+    -fx-translate-x: 1;
+    -fx-translate-y: 1;
+}
+
+/* ─── Fast mode button, active state ────────────────────────────────────── */
+
+.settings-modal__fast-mode-active {
+    -fx-background-color: #2770a4;
+    -fx-border-color: #1a5a8a;
+    -fx-text-fill: white;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-width: 1;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-cursor: hand;
+    -fx-padding: 7 20 7 20;
+}
+
+.settings-modal__fast-mode-active:hover {
+    -fx-background-color: #1e5f91;
+}
+
+.settings-modal__fast-mode-active:pressed {
+    -fx-background-color: #174d78;
+}

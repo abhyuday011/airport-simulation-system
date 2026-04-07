@@ -1,0 +1,260 @@
+/* ─── Buttons ─────────────────────────────────────────────────────────────── */
+
+.btn {
+    -fx-background-color: #88C1EB;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: #439EE0;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 8, 0.0, 0, 1);
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+    -fx-padding: 7 18 7 18;
+    -fx-font-size: 13px;
+}
+
+.btn:hover {
+    -fx-background-color: #6ec3ff;
+    -fx-border-color: #439EE0;
+}
+
+.btn:pressed {
+    -fx-background-color: #56aae5;
+    -fx-border-color: #439EE0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.04), 4, 0.0, 0, 1);
+    -fx-translate-x: 1;
+    -fx-translate-y: 1;
+}
+
+.btn.btn--primary {
+    -fx-background-color: #2770a4;
+    -fx-border-color: #1a5a8a;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-padding: 8 24 8 24;
+    -fx-effect: dropshadow(gaussian, rgba(39,112,164,0.35), 10, 0.0, 0, 2);
+}
+
+.btn.btn--primary:hover {
+    -fx-background-color: #1e5f91;
+    -fx-effect: dropshadow(gaussian, rgba(39,112,164,0.50), 14, 0.0, 0, 4);
+}
+
+.btn.btn--primary:pressed {
+    -fx-background-color: #174d78;
+    -fx-effect: dropshadow(gaussian, rgba(39,112,164,0.20), 6, 0.0, 0, 1);
+}
+
+.btn.btn--secondary {
+    -fx-background-color: transparent;
+    -fx-border-color: #88C1EB;
+    -fx-text-fill: #2770a4;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-effect: none;
+}
+
+.btn.btn--secondary:hover {
+    -fx-background-color: rgba(136,193,235,0.18);
+    -fx-border-color: #439EE0;
+    -fx-text-fill: #2770a4;
+    -fx-effect: none;
+}
+
+.btn.btn--secondary:pressed {
+    -fx-background-color: rgba(136,193,235,0.32);
+    -fx-border-color: #2770a4;
+}
+
+.btn--top-bar {
+    -fx-background-color: #439EE0;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-border-color: rgba(255,255,255,0.70);
+    -fx-border-width: 1;
+    -fx-text-fill: white;
+    -fx-cursor: hand;
+    -fx-padding: 5 16 5 16;
+    -fx-font-size: 13px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 2, 10, 2, 2);
+}
+
+.btn--top-bar:hover {
+    -fx-background-color: rgba(255,255,255,0.15);
+    -fx-border-color: white;
+}
+
+.btn--top-bar:pressed {
+    -fx-background-color: rgba(255,255,255,0.28);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 2, 10, 1, 1);
+    -fx-translate-x: 1;
+    -fx-translate-y: 1;
+}
+
+/* ─── Top bar (shared across screens) ────────────────────────────────────── */
+
+.top-bar {
+    -fx-background-color: #439EE0;
+    -fx-padding: 10 20 10 20;
+    -fx-border-color: transparent transparent #2770a4 transparent;
+    -fx-border-width: 0 0 2 0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.12), 8, 0.0, 0, 2);
+}
+
+.top-bar__title {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-font-size: 18px;
+}
+
+.top-bar__sep {
+    -fx-background-color: rgba(255,255,255,0.35);
+    -fx-max-width: 1px;
+    -fx-pref-width: 1px;
+    -fx-min-width: 1px;
+    -fx-padding: 0 6 0 6;
+    -fx-opacity: 0.4;
+}
+
+/* ─── Form fields ─────────────────────────────────────────────────────────── */
+
+.text-field {
+    -fx-background-color: white;
+    -fx-border-color: #88C1EB;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-border-width: 1;
+    -fx-padding: 4 8 4 8;
+    -fx-font-size: 13px;
+}
+
+.text-field:focused {
+    -fx-border-color: #439EE0;
+    -fx-effect: dropshadow(gaussian, rgba(67,158,224,0.25), 6, 0.0, 0, 0);
+}
+
+.field-label {
+    -fx-text-fill: #333;
+    -fx-font-size: 13px;
+}
+
+.field-unit {
+    -fx-text-fill: #888;
+    -fx-font-size: 12px;
+}
+
+.fields-group {
+    -fx-padding: 4 0 4 0;
+}
+
+/* ─── Section header ──────────────────────────────────────────────────────── */
+
+.section-header {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2770a4;
+    -fx-padding: 0 0 4 0;
+}
+
+/* ─── Dialogs ─────────────────────────────────────────────────────────────── */
+
+.dialog-pane {
+    -fx-background-color: white;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #B0DBF7;
+}
+
+.dialog-pane .button-bar .button {
+    -fx-background-color: #88C1EB;
+    -fx-background-radius: 20;
+    -fx-border-color: #439EE0;
+    -fx-border-radius: 20;
+    -fx-text-fill: white;
+}
+
+.dialog-pane .button-bar .button:hover {
+    -fx-background-color: #6ec3ff;
+}
+
+/* ─── Scroll pane ─────────────────────────────────────────────────────────── */
+
+.scroll-pane {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+.scroll-pane > .viewport {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar .increment-button,
+.scroll-pane .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 0;
+}
+
+.scroll-pane .scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-pane .scroll-bar .track,
+.scroll-pane .scroll-bar .track-background {
+    -fx-background-color: transparent;
+    -fx-background-insets: 0;
+}
+
+.scroll-pane .scroll-bar .thumb {
+    -fx-background-color: rgba(67,158,224,0.55);
+    -fx-background-radius: 999;
+    -fx-padding: 2;
+}
+
+.scroll-pane .scroll-bar .thumb:hover {
+    -fx-background-color: rgba(67,158,224,0.75);
+}
+
+.scroll-pane .scroll-bar .thumb:pressed {
+    -fx-background-color: #439EE0;
+}
+
+.scroll-pane .scroll-bar:vertical {
+    -fx-pref-width: 12;
+}
+
+.scroll-pane .scroll-bar:horizontal {
+    -fx-pref-height: 12;
+}
+
+
+.advanced-pane {
+    -fx-border-radius: 8;
+    -fx-background-radius: 8;
+    /* -fx-border-color: #B0DBF7; */
+    -fx-border-width: 1;
+}
+
+.advanced-pane > .title {
+    -fx-background-color: #B0DBF7;
+    -fx-background-radius: 8 8 0 0;
+    -fx-padding: 8 12 8 12;
+}
+
+.advanced-pane > .title > .text {
+    -fx-fill: #2770a4;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+}
+
+.advanced-pane > .title > .arrow-button > .arrow {
+    -fx-background-color: #2770a4;
+}
+
+.advanced-pane > .content {
+    -fx-background-color: white;
+    -fx-padding: 12;
+    -fx-border-color: #B0DBF7;
+    -fx-border-width: 0 1 1 1;
+    -fx-border-radius: 0 0 8 8;
+}

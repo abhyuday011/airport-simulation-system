@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.control.TitledPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import uk.ac.warwick.cs261.ui.components.ResponsiveHBox?>
+<?import uk.ac.warwick.cs261.ui.components.ResponsiveChild?>
+
+<BorderPane
+    prefHeight="680.0"
+    prefWidth="900.0"
+    stylesheets="@/ui/css/common.css, @/ui/css/start_screen.css"
+    xmlns="http://javafx.com/javafx/17"
+    xmlns:fx="http://javafx.com/fxml/1"
+    fx:controller="uk.ac.warwick.cs261.ui.controllers.StartScreenController">
+
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="12" styleClass="top-bar" BorderPane.alignment="CENTER">
+            <Label text="Dorset Software Airport Simulation" styleClass="top-bar__title" />
+            <Region HBox.hgrow="ALWAYS" />
+            <Button text="Stats Summary" onAction="#toReportScreen" styleClass="btn--top-bar" />
+            <Button text="Help" onAction="#onHelp" styleClass="btn--top-bar" />
+        </HBox>
+    </top>
+
+    <center>
+        <ResponsiveHBox BorderPane.alignment="CENTER">
+            <ResponsiveChild relativeSize="0.25">
+                <VBox styleClass="runway-panel" spacing="12">
+                    <Label text="Runways" styleClass="section-header" />
+                    <ScrollPane fitToWidth="true" fitToHeight="true" VBox.vgrow="ALWAYS">
+                        <content>
+                            <VBox fx:id="runwayCardList" spacing="10">
+                                <padding><Insets top="4" right="4" bottom="4" left="4" /></padding>
+                            </VBox>
+                        </content>
+                    </ScrollPane>
+                    <Button text="+ Add Runway" onAction="#onAddRunway" styleClass="btn" maxWidth="Infinity" />
+                </VBox>
+            </ResponsiveChild>
+
+            <ResponsiveChild relativeSize="0.75">
+                <VBox styleClass="settings-panel" spacing="12">
+                    <Label text="Settings" styleClass="section-header" />
+                    <BorderPane>
+                    <center>
+                    <ScrollPane fitToWidth="true" fitToHeight="true" VBox.vgrow="ALWAYS">
+                        <content>
+                            <VBox spacing="16">
+                                <padding><Insets top="4" right="4" bottom="4" left="4" /></padding>
+
+                                <!-- General -->
+                                <VBox spacing="14" styleClass="fields-group">
+                                    <HBox alignment="CENTER_LEFT" spacing="10">
+                                        <Label text="Duration:" styleClass="field-label" prefWidth="250" />
+                                        <TextField fx:id="durationField" promptText="24"  prefWidth="120" styleClass="text-field">
+                                            <tooltip>
+                                                <Tooltip text="Between 1-10,000"/>
+                                            </tooltip>
+                                        </TextField>
+                                        <Label text="hours" styleClass="field-unit" />
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" spacing="10">
+                                        <Label text="Outbound Flow:" styleClass="field-label" prefWidth="250" />
+                                        <TextField fx:id="outboundFlowField" promptText="15"  prefWidth="120" styleClass="text-field">
+                                            <tooltip>
+                                                <Tooltip text="Between 1-60"/>
+                                            </tooltip>
+                                        </TextField>
+                                        <Label text="per hour" styleClass="field-unit" />
+                                    </HBox>
+                                    <HBox alignment="CENTER_LEFT" spacing="10">
+                                        <Label text="Inbound Flow:" styleClass="field-label" prefWidth="250" />                                        
+                                        <TextField fx:id="inboundFlowField" promptText="15"  prefWidth="120" styleClass="text-field" >
+                                            <tooltip>
+                                                <Tooltip text="Between 1-60"/>
+                                            </tooltip>
+                                        </TextField>                                        
+                                        <Label text="per hour" styleClass="field-unit" />
+                                    </HBox>
+                                </VBox>
+
+                                <!-- Aircraft Emergency Settings -->
+                                <TitledPane text="Aircraft Emergency Settings" expanded="false" styleClass="settings-section">
+                                    <content>
+                                        <VBox spacing="14" styleClass="fields-group">
+                                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                                <Label text="Mechanical Failure Probability:" styleClass="field-label" prefWidth="250" />
+                                                <TextField fx:id="mechanicalFailureField" promptText="3"  prefWidth="120" styleClass="text-field" >
+                                                    <tooltip>
+                                                        <Tooltip text="Between 0-100"/>
+                                                    </tooltip>
+                                                </TextField>
+                                                <Label text="percent" styleClass="field-unit" />
+                                            </HBox>
+                                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                                <Label text="Health Emergency Probability:" styleClass="field-label" prefWidth="250" />
+                                                <TextField fx:id="healthEmergencyField" promptText="3" prefWidth="120" styleClass="text-field" >
+                                                    <tooltip>
+                                                        <Tooltip text="Between 0-100"/>
+                                                    </tooltip>
+                                                </TextField>
+                                            
+                                                <Label text="percent" styleClass="field-unit" />
+                                            </HBox>
+                                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                                <Label text="Health Emergency Escalation Time Mean:" styleClass="field-label" prefWidth="250" />
+                                                <TextField fx:id="healthEmergencyEscalationTimeMeanField"  promptText="5" prefWidth="120" styleClass="text-field" >
+                                                    <tooltip>
+                                                        <Tooltip text="Between 1 and max fuel value"/>
+                                                    </tooltip>
+                                                </TextField>
+                                                <Label text="mins" styleClass="field-unit" />
+                                            </HBox>
+                                        </VBox>
+                                    </content>
+                                </TitledPane>
+
+                                <!-- Runway Closure Settings -->
+                                <TitledPane text="Runway Closure Settings" expanded="false" styleClass="settings-section">
+                                    <content>
+                                        <VBox spacing="14" styleClass="fields-group">
+                                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                                <Label text="Inspection Duration Mean:" styleClass="field-label" prefWidth="250" />
+                                                <TextField fx:id="runwayInspectionDurationMeanField" promptText="10"  prefWidth="120" styleClass="text-field" >
+                                                    <tooltip>
+                                                        <Tooltip text="Between 1-30"/>
+                                                    </tooltip>
+                                                </TextField>
+                                                <Label text="mins" styleClass="field-unit" />
+                                            </HBox>
+                                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                                <Label text="Snow Clearance Duration Mean:" styleClass="field-label" prefWidth="250" />
+                                                <TextField fx:id="runwaySnowClearanceDurationMeanField" promptText="30"  prefWidth="120" styleClass="text-field" >
+                                                    <tooltip>
+                                                        <Tooltip text="Between 1-30"/>
+                                                    </tooltip>
+                                                </TextField>
+                                                <Label text="mins" styleClass="field-unit" />
+                                            </HBox>
+                                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                                <Label text="Equipment Failure Duration Mean:" styleClass="field-label" prefWidth="250" />
+                                                <TextField fx:id="runwayEquipmentFailureDurationMeanField" promptText="20"  prefWidth="120" styleClass="text-field" >
+                                                    <tooltip>
+                                                        <Tooltip text="Between 1-30"/>
+                                                    </tooltip>
+                                                </TextField>
+                                                <Label text="mins" styleClass="field-unit" />
+                                            </HBox>
+                                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                                <Label text="Inspection Probability:" styleClass="field-label" prefWidth="250" />
+                                                <TextField fx:id="runwayInspectionProbabilityField" promptText="1" prefWidth="120" styleClass="text-field" >
+                                                    <tooltip>
+                                                        <Tooltip text="Between 0-100"/>
+                                                    </tooltip>
+                                                </TextField>
+                                                <Label text="percent" styleClass="field-unit" />
+                                            </HBox>
+                                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                                <Label text="Snow Clearance Probability:" styleClass="field-label" prefWidth="250" />
+                                                <TextField fx:id="runwaySnowClearanceProbabilityField" promptText="5"  prefWidth="120" styleClass="text-field" >
+                                                    <tooltip>
+                                                        <Tooltip text="Between 0-100"/>
+                                                    </tooltip>
+                                                </TextField>
+                                                <Label text="percent" styleClass="field-unit" />
+                                            </HBox>
+                                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                                <Label text="Equipment Failure Probability:" styleClass="field-label" prefWidth="250" />
+                                                <TextField fx:id="runwayEquipmentFailureProbabilityField" promptText="2" prefWidth="120" styleClass="text-field" >
+                                                    <tooltip>
+                                                        <Tooltip text="Between 0-100"/>
+                                                    </tooltip>
+                                                </TextField>
+                                                <Label text="percent" styleClass="field-unit" />
+                                            </HBox>
+                                        </VBox>
+                                    </content>
+                                </TitledPane>
+
+                                <!-- Advanced Settings -->
+                                <TitledPane text="Advanced Settings" expanded="false" styleClass="settings-section">
+                                    <content>
+                                        <VBox spacing="14" styleClass="fields-group">
+                                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                                <Label text="RNG Seed:" styleClass="field-label" prefWidth="250" />
+                                                <TextField fx:id="rngSeedField" promptText="0" prefWidth="120" styleClass="text-field" />
+                                            </HBox>
+                                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                                <Label text="Departure Delay Std Dev:" styleClass="field-label" prefWidth="250" />
+                                                <TextField fx:id="departureDelayField" promptText="5"  prefWidth="120" styleClass="text-field" >
+                                                    <tooltip>
+                                                        <Tooltip text="Between 1-10"/>
+                                                    </tooltip>
+                                                </TextField>
+                                                <Label text="mins" styleClass="field-unit" />
+                                            </HBox>
+                                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                                <Label text="Min Remaining Fuel:" styleClass="field-label" prefWidth="250" />
+                                                <TextField fx:id="minFuelField" promptText="20" prefWidth="120" styleClass="text-field" >
+                                                    <tooltip>
+                                                        <Tooltip text="Greater than 10 and the low fuel threshold"/>
+                                                    </tooltip>
+                                                </TextField>
+                                                <Label text="mins" styleClass="field-unit" />
+                                            </HBox>
+                                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                                <Label text="Max Remaining Fuel:" styleClass="field-label" prefWidth="250" />
+                                                <TextField fx:id="maxFuelField" promptText="60"  prefWidth="120" styleClass="text-field" >
+                                                    <tooltip>
+                                                        <Tooltip text="Between min fuel and 90"/>
+                                                    </tooltip>
+                                                </TextField>
+                                                <Label text="mins" styleClass="field-unit" />
+                                            </HBox>
+                                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                                <Label text="Max Delay:" styleClass="field-label" prefWidth="250" />
+                                                <TextField fx:id="maxDelayField" promptText="30" prefWidth="120"  styleClass="text-field" >
+                                                    <tooltip>
+                                                        <Tooltip text="Between 0-60"/>
+                                                    </tooltip>
+                                                </TextField>
+                                                <Label text="mins" styleClass="field-unit" />
+                                            </HBox>
+                                            <HBox alignment="CENTER_LEFT" spacing="10">
+                                                <Label text="Low Fuel Threshold:" styleClass="field-label" prefWidth="250" />
+                                                <TextField fx:id="lowFuelField" promptText="10"  prefWidth="120" styleClass="text-field" >
+                                                    <tooltip>
+                                                        <Tooltip text="Between 0-60"/>
+                                                    </tooltip>
+                                                </TextField>
+                                                <Label text="mins" styleClass="field-unit" />
+                                            </HBox>
+                                        </VBox>
+                                    </content>
+                                </TitledPane>
+                            </VBox>
+                        </content>
+                    </ScrollPane>
+                    </center>
+                    <bottom>
+                        <HBox fx:id="errorBox" visible="false" spacing="15" alignment="CENTER" styleClass="errorBox">
+                        <Label styleClass="errorMsg" fx:id="errorLabel" minHeight="0"/>
+                        </HBox>
+                    </bottom>
+                </BorderPane>
+                
+                </VBox>
+            </ResponsiveChild>
+        </ResponsiveHBox>
+
+    </center>
+
+    <bottom>
+        <ResponsiveHBox styleClass="bottom-bar" alignment="CENTER_LEFT" spacing="0" BorderPane.alignment="CENTER">
+            <ResponsiveChild relativeSize="0.25">
+                <HBox spacing="8">
+                    <Button HBox.hgrow="ALWAYS" maxWidth="Infinity" text="Save Config"
+                            onAction="#onSave" styleClass="btn,btn--secondary" />
+                    <Button HBox.hgrow="ALWAYS" maxWidth="Infinity" text="Load Config"
+                            onAction="#onLoad" styleClass="btn,btn--secondary" />
+                </HBox>
+            </ResponsiveChild>
+
+            <ResponsiveChild relativeSize="0.75">
+                <HBox>
+                    <Region HBox.hgrow="ALWAYS" />
+                    <Button text="&#x25B6;  Run Simulation"
+                            onAction="#onStart"
+                            styleClass="btn,btn--primary" />
+                </HBox>
+            </ResponsiveChild>
+        </ResponsiveHBox>
+    </bottom>
+
+</BorderPane>
