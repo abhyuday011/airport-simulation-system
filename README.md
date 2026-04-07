@@ -37,6 +37,5 @@ This project simulates real-world airport operations to evaluate throughput, del
 ### Steps
 1. Clone the repository
 2. Open terminal in the project folder
-3. Run:
-   mvn clean install
-   mvn javafx:run
+3. Run: mvn clean install
+4. Run: mvn javafx:run
