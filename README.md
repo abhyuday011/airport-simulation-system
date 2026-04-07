@@ -28,3 +28,15 @@ This project simulates real-world airport operations to evaluate throughput, del
 - Enhanced UI visualisation of aircraft movements
 - Advanced analytics for performance metrics
 - Support for multi-airport simulations
+
+## How to Run
+### Prerequisites
+- Java 17+
+- Maven
+
+### Steps
+1. Clone the repository
+2. Open terminal in the project folder
+3. Run:
+   mvn clean install
+   mvn javafx:run
